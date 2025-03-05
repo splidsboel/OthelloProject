@@ -25,10 +25,10 @@ public class GameState {
 		board = new int[size][size];
 		currentPlayer = playerToStart;
         int half = size/2-1;
-        board[half][half] = 1;
+        board[half][half] = 1; 
         board[half+1][half+1] = 1;
         board[half][half+1] = 2;
-        board[half+1][half] = 2;   
+        board[half+1][half] = 2; // de 4 startbrikker bliver placeret
 	}
 	
 	/**

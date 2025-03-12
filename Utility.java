@@ -1,4 +1,18 @@
 public class Utility {
+    private int[][] utilityValue;
+
+    public Utility(GameState s){
+        this.utilityValue = populate(s);
+    }
+
+    // public int[][] getUtilityValue() {
+    //     return utilityValue;
+    // }
+
+    public int moveUtility(Position p){
+        return utilityValue[p.col][p.row];
+    }
+
     public int[][] populate(GameState s){
         int n = s.getBoard().length;
         int[][] utilities = new int[n][n];
@@ -44,4 +58,6 @@ public class Utility {
 
         return utilities;
     }
+
+
 }

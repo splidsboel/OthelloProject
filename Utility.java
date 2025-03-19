@@ -5,10 +5,6 @@ public class Utility {
         this.utilityValue = populate(s);
     }
 
-    // public int[][] getUtilityValue() {
-    //     return utilityValue;
-    // }
-
     public int moveUtility(Position p){
         return utilityValue[p.col][p.row];
     }
@@ -55,9 +51,6 @@ public class Utility {
                 }
             }
         }
-
         return utilities;
     }
-
-
 }

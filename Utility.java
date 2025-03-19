@@ -1,14 +1,35 @@
+/**
+ * The Utility class calculates position-based values for the Othello board.
+ * It assigns utility scores to different board positions based on strategic importance.
+ */
 public class Utility {
     private int[][] utilityValue;
 
+    /**
+     * Constructs a Utility instance and initializes the utility value table.
+     *
+     * @param s The current game state from which the board dimensions are derived.
+     */
     public Utility(GameState s){
         this.utilityValue = populate(s);
     }
 
+    /**
+     * Returns the utility value for a given position on the board.
+     *
+     * @param p The position on the board.
+     * @return The utility score associated with the position.
+     */
     public int moveUtility(Position p){
         return utilityValue[p.col][p.row];
     }
 
+    /**
+     * Generates a utility value matrix for the board based on strategic positioning.
+     *
+     * @param s The current game state.
+     * @return A 2D array where each position is assigned a utility score.
+     */
     public int[][] populate(GameState s){
         int n = s.getBoard().length;
         int[][] utilities = new int[n][n];
@@ -20,6 +41,7 @@ public class Utility {
         int secondOuterRingPenalty = -3;
         int centerValue = 1;
 
+        // Assign values based on position importance
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 // Corners (highest value)

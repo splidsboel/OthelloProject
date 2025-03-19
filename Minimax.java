@@ -7,7 +7,8 @@ public class Minimax implements IOthelloAI {
 
     public Minimax(GameState s, int depthLimit){
         this.depthLimit = depthLimit;
-        ArrayList<Position> legalMoves = s.legalMoves();
+        this.utilityTable = new Utility(s);
+        this.legalMoves = s.legalMoves();
         sortMovesByValue(legalMoves);
     }
 
@@ -16,8 +17,6 @@ public class Minimax implements IOthelloAI {
         // if (legalMoves.isEmpty()) {
         //     return null;  // If no moves are available, return early
         // }
-
-        utilityTable = new Utility(s);
 
         int player = s.getPlayerInTurn();
         int value = Integer.MIN_VALUE;

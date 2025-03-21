@@ -157,7 +157,7 @@ public class Minimax implements IOthelloAI {
             }
         }
     
-        return (playerTokens - opponentTokens) * 10 + positionalScore;
+        return (playerTokens - opponentTokens) * 6 + positionalScore;
     }
 
     /**
